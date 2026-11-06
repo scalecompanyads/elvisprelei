@@ -217,9 +217,18 @@
     .about__photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; }
     .about__panel { background: var(--tint); border-radius: var(--radius-lg); padding: clamp(28px, 4.4vw, 60px); }
     .about__panel > p { margin-top: 20px; color: var(--ink-soft); max-width: 40em; }
-    .gains { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 26px 32px; margin: 34px 0; padding: 30px 0 0; list-style: none; border-top: 1px solid var(--line); }
+    .gains { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px 32px; margin: 34px 0; padding: 30px 0 0; list-style: none; border-top: 1px solid var(--line); }
     .gains strong { display: block; font-family: var(--serif); font-size: 1.375rem; font-weight: 400; line-height: 1.2; }
     .gains span { display: block; margin-top: 6px; font-size: .9688rem; color: var(--ink-soft); }
+
+    .office { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 7fr); gap: 22px; margin-top: 22px; }
+    .office .about__panel { display: flex; flex-direction: column; justify-content: center; }
+    .office__addr { margin-top: 20px; font-style: normal; font-size: 1.125rem; }
+    .office__links { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 22px; font-size: .9688rem; }
+    .office__links a { text-underline-offset: 4px; }
+    .office__links a:hover { color: var(--crimson); }
+    .office__photos { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 3fr); gap: 22px; min-height: 320px; }
+    .office__photos img { width: 100%; height: 100%; min-height: 0; object-fit: cover; border-radius: var(--radius-lg); }
 
     /* Familiares */
     .risks { margin-inline: clamp(8px, 1.4vw, 20px); padding-block: clamp(48px, 6vw, 80px); background: var(--charcoal); color: var(--on-dark); border-radius: var(--radius-lg); }
@@ -344,7 +353,11 @@
     .foot nav { display: flex; flex-wrap: wrap; gap: 8px 26px; font-size: .9375rem; }
     .foot nav a { text-decoration: none; }
     .foot nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
-    .foot__legal { margin-top: 22px; font-size: .8125rem; line-height: 1.55; color: var(--on-dark-soft); }
+    .foot__info { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 22px 48px; margin-top: 30px; }
+    .foot__label { display: block; margin-bottom: 6px; font-size: .6875rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--on-dark-soft); }
+    .foot__info p { font-size: .9375rem; line-height: 1.5; }
+    .foot__info a { text-underline-offset: 4px; }
+    .foot__legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 40px; margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--line-dark); font-size: .8125rem; line-height: 1.5; color: var(--on-dark-soft); }
 
     /* Entrada */
     .js .rise { opacity: 0; transform: translateY(14px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
@@ -389,7 +402,10 @@
         object-fit: cover;
         object-position: 50% 0;
       }
-      .about__grid, .risks__grid, .faq__grid { grid-template-columns: minmax(0, 1fr); }
+      .about__grid, .risks__grid, .faq__grid, .office { grid-template-columns: minmax(0, 1fr); }
+      .foot__info { grid-template-columns: minmax(0, 1fr); margin-top: 26px; }
+      .foot__legal { flex-direction: column; margin-top: 26px; }
+      .office__photos { min-height: 0; height: 56vw; max-height: 380px; gap: 12px; }
       .faq__grid { gap: 0; }
       .faq__list { order: 1; margin-top: 24px; }
       .faq__side .cta { order: 2; justify-self: center; }
@@ -440,7 +456,7 @@
         </a>
 
         <div class="hero__body">
-          <span class="pill"><svg aria-hidden="true"><use href="#i-scale"/></svg>Advogado Criminalista · Mato Grosso do Sul</span>
+          <span class="pill"><svg aria-hidden="true"><use href="#i-scale"/></svg>Advogado Criminalista · OAB/MG 163.453</span>
           <h1 id="titulo">Defesa Criminal Estratégica em Ponta&nbsp;Porã e Dourados</h1>
           <p class="hero__text">Atuação em <strong>prisões em flagrante</strong>, <strong>investigações policiais</strong>, <strong>audiências de custódia</strong> e <strong>processos criminais</strong>. Atendimento jurídico em Ponta Porã, Dourados e demais localidades de Mato Grosso do Sul, conforme a necessidade de cada caso.</p>
           <a class="cta" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener" data-cta="hero">
@@ -470,14 +486,29 @@
           <h2 id="t-apresentacao">Elvis Preslei, <em>advogado criminalista</em></h2>
           <p>Atendo pessoas investigadas, presas ou processadas criminalmente em Ponta Porã, Dourados e região, além de seus familiares, com linguagem simples e orientação objetiva em cada etapa do caso.</p>
           <ul class="gains">
-            <li><strong>Localização</strong><span>Ponta Porã, Dourados e região</span></li>
+            <li><strong>Inscrição</strong><span>OAB/MG 163.453</span></li>
+            <li><strong>Formação</strong><span>Formado há mais de dez anos</span></li>
+            <li><strong>Pós-graduação</strong><span>Direito Penal e Processo Penal pelo IDP de Brasília</span></li>
             <li><strong>Atuação</strong><span>Prisões, investigações e processos criminais</span></li>
-            <li><strong>Contato</strong><span>Atendimento pelo WhatsApp</span></li>
           </ul>
           <a class="cta" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener" data-cta="apresentacao">
             SOLICITAR ATENDIMENTO JURÍDICO
             <span class="cta__icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
           </a>
+        </div>
+      </div>
+      <div class="wrap office">
+        <div class="about__panel rise">
+          <h2 id="t-escritorio">Escritório em <em>Ponta Porã</em></h2>
+          <address class="office__addr">Rua Guia Lopes, 873, Sala 2<br>Centro, Ponta Porã/MS<br>CEP 79.904-654</address>
+          <p class="office__links">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20Guia%20Lopes%2C%20873%2C%20Centro%2C%20Ponta%20Por%C3%A3%20-%20MS%2C%2079904-654" target="_blank" rel="noopener">Ver no mapa</a>
+            <a href="https://elvisadvogado.com.br" target="_blank" rel="noopener">Conheça minha atuação e publicações jurídicas</a>
+          </p>
+        </div>
+        <div class="office__photos rise">
+          <img src="assets/escritorio-entrada.webp" width="825" height="675" alt="Entrada do escritório, com porta de vidro e parede de pedra" loading="lazy" decoding="async">
+          <img src="assets/escritorio-fachada.webp" width="620" height="885" alt="Fachada do escritório em Ponta Porã" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
@@ -663,7 +694,24 @@
               <a href="#duvidas">Dúvidas</a>
             </nav>
           </div>
-          <p class="foot__legal">Elvis Preslei · Ponta Porã, Dourados e região<br>As informações desta página têm caráter informativo e não substituem a análise do caso. Não há promessa de resultado.<br>© 2026 Todos os direitos reservados.</p>
+          <div class="foot__info">
+            <div>
+              <span class="foot__label">Inscrição</span>
+              <p>OAB/MG 163.453</p>
+            </div>
+            <div>
+              <span class="foot__label">Escritório</span>
+              <p>Rua Guia Lopes, 873, Sala 2, Centro<br>Ponta Porã/MS, CEP&nbsp;79.904-654</p>
+            </div>
+            <div>
+              <span class="foot__label">Site</span>
+              <p><a href="https://elvisadvogado.com.br" target="_blank" rel="noopener">elvisadvogado.com.br</a></p>
+            </div>
+          </div>
+          <div class="foot__legal">
+            <p>As informações desta página têm caráter informativo e não substituem a análise do caso. Não há promessa de resultado.</p>
+            <p>© 2026 Elvis Preslei. Todos os direitos reservados.</p>
+          </div>
         </div>
       </div>
     </div>
