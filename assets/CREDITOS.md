@@ -6,3 +6,7 @@
 - area-cautelares.webp: File:Courtroom One Gavel - Flickr - Joe Gratz.jpg (Joe Gratz), CC0, https://commons.wikimedia.org/wiki/File:Courtroom_One_Gavel_-_Flickr_-_Joe_Gratz.jpg
 - area-trafico.webp: File:NORTHERN CALIFORNIA - NARA - 543024.jpg (Tomas Sennett), Public domain, https://commons.wikimedia.org/wiki/File:NORTHERN_CALIFORNIA_-_NARA_-_543024.jpg
 - area-investigacoes.webp: File:Old books on a shelf (Unsplash).jpg (Roman Kraft romankraft), CC0, https://commons.wikimedia.org/wiki/File:Old_books_on_a_shelf_(Unsplash).jpg
+- area-habeas-corpus.webp: File:Giant white pillars (Unsplash).jpg (Chris Brignola cjbrignola), CC0, https://commons.wikimedia.org/wiki/File:Giant_white_pillars_(Unsplash).jpg
+- area-crimes-economicos.webp: File:Well-earned cash (Unsplash).jpg (Niels Steeman nielssteeman), CC0, https://commons.wikimedia.org/wiki/File:Well-earned_cash_(Unsplash).jpg
+- area-consultoria.webp: File:Writing with a fountain pen (Unsplash).jpg (Aaron Burden aaronburden), CC0, https://commons.wikimedia.org/wiki/File:Writing_with_a_fountain_pen_(Unsplash).jpg
+- area-apreensao.webp: File:Shipping containers in a port (Unsplash).jpg (Igor Ovsyannykov igorovsyannykov), CC0, https://commons.wikimedia.org/wiki/File:Shipping_containers_in_a_port_(Unsplash).jpg

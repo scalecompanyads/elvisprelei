@@ -17,7 +17,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Advogado Criminalista em Ponta Porã e Dourados | Elvis Preslei">
   <meta property="og:description" content="Defesa criminal estratégica em Ponta Porã e Dourados. Atuação em prisões em flagrante, investigações policiais, audiências de custódia e processos criminais.">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="preload" as="image" href="assets/elvis-hero.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +28,8 @@
       --charcoal: #171717;
       --forest: #06110C;
       --crimson: #A31C1B;
+      --whatsapp: #25D366;
+      --whatsapp-deep: #1DA851;
       /* Apoios neutros derivados */
       --crimson-deep: #861615;
       --forest-lift: #10271C;
@@ -102,10 +104,32 @@
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: #fff;
-      color: var(--crimson);
+      background: var(--whatsapp);
+      color: #fff;
     }
-    .cta__icon svg { width: 21px; height: 21px; }
+    .cta__icon svg { width: 22px; height: 22px; }
+    .cta--plain { padding-inline: 28px; }
+
+    /* WhatsApp flutuante */
+    .wa-float {
+      position: fixed;
+      right: max(16px, env(safe-area-inset-right));
+      bottom: max(16px, env(safe-area-inset-bottom));
+      z-index: 50;
+      display: grid;
+      place-items: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(6, 17, 12, .32);
+      transition: background-color .2s var(--ease), transform .12s var(--ease);
+      touch-action: manipulation;
+    }
+    .wa-float:hover { background: var(--whatsapp-deep); }
+    .wa-float:active { transform: scale(.95); }
+    .wa-float svg { width: 32px; height: 32px; }
 
     /* Hero */
     .hero {
@@ -126,17 +150,8 @@
       border-top-right-radius: var(--radius-lg);
       z-index: 1;
     }
-    .brand { display: inline-block; text-decoration: none; line-height: 1.1; }
-    .brand__name { display: block; font-family: var(--serif); font-size: 1.75rem; }
-    .brand__role {
-      display: block;
-      margin-top: 5px;
-      font-size: .6875rem;
-      font-weight: 500;
-      letter-spacing: .17em;
-      text-transform: uppercase;
-      color: var(--on-dark-soft);
-    }
+    .brand { display: inline-block; text-decoration: none; }
+    .brand img { width: clamp(220px, 19vw, 270px); }
     .hero__body { margin-block: auto; padding-top: 48px; }
     .pill {
       display: inline-flex;
@@ -383,8 +398,7 @@
       .hero .brand { align-self: center; }
       .hero__body { padding-top: 20px; }
       .hero__text { margin-inline: auto; }
-      .hero .brand__name { font-size: 1.5rem; }
-      .hero .brand__role { margin-top: 3px; font-size: .625rem; }
+      .hero .brand img { width: 200px; }
       .hero__text { margin-top: 12px; font-size: .9375rem; line-height: 1.45; }
       .hero .cta { min-height: 52px; margin-top: 18px; padding-block: 6px; }
       .hero h1 { margin-top: 14px; font-size: clamp(1.75rem, 7.8vw, 2.5rem); }
@@ -421,6 +435,7 @@
 
     @media (max-width: 420px) {
       .cta { gap: 10px; padding-left: 18px; font-size: .78rem; letter-spacing: .02em; }
+      .cta--plain { padding-inline: 22px; }
       .cta__icon { width: 38px; height: 38px; }
       .gains { grid-template-columns: minmax(0, 1fr); }
       .pill { gap: 7px; padding-inline: 11px 13px; font-size: .6875rem; letter-spacing: .03em; }
@@ -450,9 +465,8 @@
       <div class="hero__mark" aria-hidden="true">§</div>
 
       <div class="hero__panel on-dark">
-        <a class="brand" href="#titulo" aria-label="Elvis Preslei Adv">
-          <span class="brand__name">Elvis Preslei</span>
-          <span class="brand__role">Advocacia Criminal</span>
+        <a class="brand" href="#titulo">
+          <img src="assets/logo-ep.webp" width="819" height="190" alt="Elvis Preslei Rocha Barbosa, Advocacia Criminal Estratégica">
         </a>
 
         <div class="hero__body">
@@ -491,9 +505,8 @@
             <li><strong>Pós-graduação</strong><span>Direito Penal e Processo Penal pelo IDP de Brasília</span></li>
             <li><strong>Atuação</strong><span>Prisões, investigações e processos criminais</span></li>
           </ul>
-          <a class="cta" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener" data-cta="apresentacao">
+          <a class="cta cta--plain" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener" data-cta="apresentacao">
             SOLICITAR ATENDIMENTO JURÍDICO
-            <span class="cta__icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
           </a>
         </div>
       </div>
@@ -518,9 +531,8 @@
         <div class="rise">
           <h2 id="t-familiares">Seu familiar foi preso?</h2>
           <p class="risks__intro">Respostas objetivas para as primeiras dúvidas da família sobre prisão, audiência de custódia e acompanhamento jurídico.</p>
-          <a class="cta" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site.%20Meu%20familiar%20foi%20preso%20e%20preciso%20de%20orienta%C3%A7%C3%A3o." target="_blank" rel="noopener" data-cta="familiares">
+          <a class="cta cta--plain" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site.%20Meu%20familiar%20foi%20preso%20e%20preciso%20de%20orienta%C3%A7%C3%A3o." target="_blank" rel="noopener" data-cta="familiares">
             SOLICITAR ATENDIMENTO JURÍDICO
-            <span class="cta__icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
           </a>
         </div>
         <ul class="risks__list rise">
@@ -554,16 +566,34 @@
             <p>Assistência jurídica desde a prisão, incluindo a audiência de custódia.</p>
             <span class="area__go"><svg aria-hidden="true"><use href="#i-go"/></svg></span>
           </a>
+          <a class="area" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20uma%20investiga%C3%A7%C3%A3o%20criminal." target="_blank" rel="noopener" data-cta="area-investigacoes">
+            <h3>Investigações criminais</h3>
+            <img class="area__img" src="assets/area-investigacoes.webp" width="960" height="540" alt="" loading="lazy" decoding="async">
+            <p>Atuação estratégica desde o início da investigação, seja na Polícia Federal, na Polícia Civil ou no Ministério Público.</p>
+            <span class="area__go"><svg aria-hidden="true"><use href="#i-go"/></svg></span>
+          </a>
+          <a class="area" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20um%20habeas%20corpus." target="_blank" rel="noopener" data-cta="area-habeas-corpus">
+            <h3>Habeas corpus</h3>
+            <img class="area__img" src="assets/area-habeas-corpus.webp" width="960" height="540" alt="" loading="lazy" decoding="async">
+            <p>Medidas urgentes para proteção da liberdade.</p>
+            <span class="area__go"><svg aria-hidden="true"><use href="#i-go"/></svg></span>
+          </a>
           <a class="area" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20um%20caso%20de%20tr%C3%A1fico%20de%20drogas." target="_blank" rel="noopener" data-cta="area-trafico">
             <h3>Tráfico de drogas</h3>
             <img class="area__img" src="assets/area-trafico.webp" width="960" height="540" alt="" loading="lazy" decoding="async">
             <p>Defesa em investigações e processos por crimes relacionados a drogas.</p>
             <span class="area__go"><svg aria-hidden="true"><use href="#i-go"/></svg></span>
           </a>
-          <a class="area" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20uma%20investiga%C3%A7%C3%A3o%20policial." target="_blank" rel="noopener" data-cta="area-investigacoes">
-            <h3>Investigações da Polícia Federal</h3>
-            <img class="area__img" src="assets/area-investigacoes.webp" width="960" height="540" alt="" loading="lazy" decoding="async">
-            <p>Acompanhamento em investigações da Polícia Federal e da Polícia Civil.</p>
+          <a class="area" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20um%20caso%20de%20crime%20econ%C3%B4mico." target="_blank" rel="noopener" data-cta="area-crimes-economicos">
+            <h3>Crimes econômicos</h3>
+            <img class="area__img" src="assets/area-crimes-economicos.webp" width="960" height="540" alt="" loading="lazy" decoding="async">
+            <p>Defesa em investigações envolvendo contrabando, descaminho, crimes econômicos e demais infrações penais relacionadas à atividade empresarial.</p>
+            <span class="area__go"><svg aria-hidden="true"><use href="#i-go"/></svg></span>
+          </a>
+          <a class="area" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20uma%20apreens%C3%A3o%20de%20mercadorias%20ou%20ve%C3%ADculo." target="_blank" rel="noopener" data-cta="area-apreensao">
+            <h3>Apreensão de mercadorias e veículos</h3>
+            <img class="area__img" src="assets/area-apreensao.webp" width="960" height="540" alt="" loading="lazy" decoding="async">
+            <p>Defesa em casos de apreensão de mercadorias estrangeiras e veículos, com atuação para restituição e resposta às infrações administrativas e penais decorrentes.</p>
             <span class="area__go"><svg aria-hidden="true"><use href="#i-go"/></svg></span>
           </a>
           <a class="area" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20sobre%20uma%20busca%20e%20apreens%C3%A3o." target="_blank" rel="noopener" data-cta="area-buscas">
@@ -582,6 +612,12 @@
             <h3>Execução penal</h3>
             <img class="area__img" src="assets/area-execucao-penal.webp" width="960" height="540" alt="" loading="lazy" decoding="async">
             <p>Orientação sobre direitos como a progressão de regime e acompanhamento da pena.</p>
+            <span class="area__go"><svg aria-hidden="true"><use href="#i-go"/></svg></span>
+          </a>
+          <a class="area" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20saber%20sobre%20a%20consultoria%20preventiva." target="_blank" rel="noopener" data-cta="area-consultoria">
+            <h3>Consultoria preventiva</h3>
+            <img class="area__img" src="assets/area-consultoria.webp" width="960" height="540" alt="" loading="lazy" decoding="async">
+            <p>Assessoria para empresas, empresários e transportadoras.</p>
             <span class="area__go"><svg aria-hidden="true"><use href="#i-go"/></svg></span>
           </a>
         </div>
@@ -606,9 +642,8 @@
           </li>
         </ol>
         <div class="steps__cta rise">
-          <a class="cta" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener" data-cta="como-funciona">
+          <a class="cta cta--plain" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener" data-cta="como-funciona">
             SOLICITAR ATENDIMENTO JURÍDICO
-            <span class="cta__icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
           </a>
         </div>
       </div>
@@ -619,9 +654,8 @@
         <div class="faq__side rise">
           <h2 id="t-duvidas">Dúvidas <em>frequentes</em></h2>
           <p>Ainda tem alguma pergunta sobre o caso? Envie pelo WhatsApp.</p>
-          <a class="cta" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20um%20caso." target="_blank" rel="noopener" data-cta="duvidas">
+          <a class="cta cta--plain" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20tenho%20uma%20d%C3%BAvida%20sobre%20um%20caso." target="_blank" rel="noopener" data-cta="duvidas">
             SOLICITAR ATENDIMENTO JURÍDICO
-            <span class="cta__icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
           </a>
         </div>
         <div class="faq__list rise">
@@ -676,16 +710,14 @@
         <h2 class="rise">Entenda o próximo passo</h2>
         <div class="close__row rise">
           <p>Fale pelo WhatsApp e explique o que está acontecendo com você ou com seu familiar.</p>
-          <a class="cta" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener" data-cta="fechamento">
+          <a class="cta cta--plain" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener" data-cta="fechamento">
             SOLICITAR ATENDIMENTO JURÍDICO
-            <span class="cta__icon"><svg aria-hidden="true"><use href="#i-wa"/></svg></span>
           </a>
         </div>
         <div class="foot">
           <div class="foot__top">
-            <a class="brand" href="#titulo" aria-label="Elvis Preslei Adv, voltar ao início">
-              <span class="brand__name">Elvis Preslei</span>
-              <span class="brand__role">Advocacia Criminal</span>
+            <a class="brand" href="#titulo" title="Voltar ao início">
+              <img src="assets/logo-ep.webp" width="819" height="190" alt="Elvis Preslei Rocha Barbosa, Advocacia Criminal Estratégica" loading="lazy" decoding="async">
             </a>
             <nav aria-label="Rodapé">
               <a href="#apresentacao">Apresentação</a>
@@ -716,6 +748,10 @@
       </div>
     </div>
   </footer>
+
+  <a class="wa-float" href="https://wa.me/5567984434040?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20atendimento%20jur%C3%ADdico." target="_blank" rel="noopener" data-cta="flutuante" aria-label="Falar pelo WhatsApp">
+    <svg aria-hidden="true"><use href="#i-wa"/></svg>
+  </a>
 
   <script>
     (function () {
